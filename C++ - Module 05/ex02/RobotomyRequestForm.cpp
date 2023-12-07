@@ -6,7 +6,7 @@
 /*   By: aziyani <aziyani@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:50:17 by aziyani           #+#    #+#             */
-/*   Updated: 2023/12/06 12:52:45 by aziyani          ###   ########.fr       */
+/*   Updated: 2023/12/07 22:05:08 by aziyani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& o
 	return(*this);
 }
 
-void RobotomyRequestForm::execute(const Bureaucrat& executor)
+void RobotomyRequestForm::execute(const Bureaucrat& executor) const
 {
 	std::srand(time(NULL));
 	if (executor.getGrade() <= this->getGradeToExecute() && this->getSignedStatus() == true)

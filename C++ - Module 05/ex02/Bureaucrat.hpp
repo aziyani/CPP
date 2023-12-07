@@ -6,7 +6,7 @@
 /*   By: aziyani <aziyani@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 19:24:08 by aziyani           #+#    #+#             */
-/*   Updated: 2023/12/06 11:49:07 by aziyani          ###   ########.fr       */
+/*   Updated: 2023/12/07 21:58:39 by aziyani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,6 @@ public:
 	void    incrementGrade();
 	void    decrementGrade();
 
-	class errFileException : public std::exception
-	{
-		public:
-			virtual const char *what() const throw()
-			{
-				return ("Unable to open file for shrubbery creation.");
-			}
-	};
 	class GradeTooHighException : public std::exception
 	{
 		public:

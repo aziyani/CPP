@@ -6,7 +6,7 @@
 /*   By: aziyani <aziyani@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:50:01 by aziyani           #+#    #+#             */
-/*   Updated: 2023/12/06 12:54:45 by aziyani          ###   ########.fr       */
+/*   Updated: 2023/12/07 22:05:19 by aziyani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 
 	PresidentialPardonForm &operator=(const PresidentialPardonForm& obj);
 
-	virtual void execute(const Bureaucrat& executor);
+	void execute(const Bureaucrat& executor) const;
 };
 
 #endif

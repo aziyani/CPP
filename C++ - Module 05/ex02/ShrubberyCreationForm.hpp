@@ -6,7 +6,7 @@
 /*   By: aziyani <aziyani@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:50:01 by aziyani           #+#    #+#             */
-/*   Updated: 2023/12/06 11:07:05 by aziyani          ###   ########.fr       */
+/*   Updated: 2023/12/07 22:04:26 by aziyani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 
 	ShrubberyCreationForm &operator=(const ShrubberyCreationForm& obj);
 
-	virtual void execute(const Bureaucrat& executor);
+	void execute(const Bureaucrat& executor) const;
 };
 
 #endif

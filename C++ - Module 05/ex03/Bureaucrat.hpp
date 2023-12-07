@@ -1,53 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AForm.hpp                                          :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aziyani <aziyani@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/01 12:30:49 by aziyani           #+#    #+#             */
-/*   Updated: 2023/12/07 21:58:51 by aziyani          ###   ########.fr       */
+/*   Created: 2023/11/29 19:24:08 by aziyani           #+#    #+#             */
+/*   Updated: 2023/12/07 21:54:22 by aziyani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AFORM_H
-# define AFORM_H
+#ifndef BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP
 
 # include <string>
-# include "Bureaucrat.hpp"
+# include <iostream>
+# include <fstream>
+# include <exception>
 
-class AForm
+class Bureaucrat
 {
 private:
 	const std::string name;
-	bool signedStatus;
-	const int gradeToSign;
-	const int gradeToExecute;
+	int         grade;
 
 public:
-	AForm();
-	AForm(AForm const &obj);
-	AForm(std::string name, bool signedStatus, int gradeToSing, int gradeToExecute);
-	~AForm();
-
-	AForm &operator=(const AForm &obj);
-
-	std::string getName() const;
-	bool getSignedStatus() const;
-	int getGradeToSign() const;
-	int getGradeToExecute() const;
-
-	void beSigned(const Bureaucrat bureaucrat);
-	void signAForm(const Bureaucrat bureaucrat);
+	Bureaucrat();
+	Bureaucrat(std::string name, int grade);
+	Bureaucrat(Bureaucrat const &obj);
+	~Bureaucrat();
 	
-	class errFileException : public std::exception
-	{
-		public:
-			virtual const char *what() const throw()
-			{
-				return ("Unable to open file for shrubbery creation.");
-			}
-	};
+	Bureaucrat &operator=(const Bureaucrat &obj);
+	
+	std::string getName() const;
+	int     getGrade() const;
+	void    incrementGrade();
+	void    decrementGrade();
+
 	class GradeTooHighException : public std::exception
 	{
 		public:
@@ -64,9 +53,8 @@ public:
 				return ("Grade is too low!");
 			}
 	};
-	virtual void execute(const Bureaucrat& executor) const = 0;
 };
 
-std::ostream &operator<<(std::ostream &output, AForm const &obj);
+std::ostream &operator<<(std::ostream &output, Bureaucrat const &obj);
 
 #endif
