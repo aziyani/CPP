@@ -6,7 +6,7 @@
 /*   By: aziyani <aziyani@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:29:41 by aziyani           #+#    #+#             */
-/*   Updated: 2023/12/01 11:58:34 by aziyani          ###   ########.fr       */
+/*   Updated: 2023/12/11 22:10:29 by aziyani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ Bureaucrat::Bureaucrat() : name("ayoub"), grade(100)
 Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade)
 {
     if (grade > 150)
-        throw GradeTooHighException();
-    else if (grade < 1)
         throw GradeTooLowException();
+    else if (grade < 1)
+        throw GradeTooHighException();
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const &obj) : name(obj.name) // hit const maghatcopach flcopy assingment (list initializar)
@@ -66,6 +66,15 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &obj)
     return (*this);
 }
 
+const char* Bureaucrat::GradeTooHighException::what() const throw()
+{
+    return ("Grade is too high!");
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw()
+{
+    return ("Grade is too low!");
+}
 
 std::ostream &operator<<(std::ostream &output, Bureaucrat const &obj)
 {

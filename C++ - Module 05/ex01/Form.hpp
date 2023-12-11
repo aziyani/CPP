@@ -6,7 +6,7 @@
 /*   By: aziyani <aziyani@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 12:30:49 by aziyani           #+#    #+#             */
-/*   Updated: 2023/12/04 11:00:54 by aziyani          ###   ########.fr       */
+/*   Updated: 2023/12/11 22:14:14 by aziyani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <string>
 # include "Bureaucrat.hpp"
+
+class Bureaucrat; // class farword
 
 class Form
 {
@@ -27,7 +29,7 @@ private:
 public:
 	Form();
 	Form(Form const &obj);
-	Form(std::string name, bool signedStatus, int gradeToSing, int gradeToExecute);
+	Form(std::string name, int gradeToSing, int gradeToExecute);
 	~Form();
 
 	Form &operator=(const Form &obj);
@@ -38,23 +40,16 @@ public:
 	int getGradeToExecute() const;
 
 	void beSigned(const Bureaucrat bureaucrat);
-	void signForm(const Bureaucrat bureaucrat);
 	
 	class GradeTooHighException : public std::exception
 	{
 		public:
-			virtual const char *what() const throw()
-			{
-				return ("Grade is too high!");
-			}
+			virtual const char *what() const throw();
 	};
 	class GradeTooLowException : public std::exception
 	{
 		public:
-			virtual const char *what() const throw()
-			{
-				return ("Grade is too low!");
-			}
+			virtual const char *what() const throw();
 	};
 };
 

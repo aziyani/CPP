@@ -6,7 +6,7 @@
 /*   By: aziyani <aziyani@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 12:30:39 by aziyani           #+#    #+#             */
-/*   Updated: 2023/12/04 11:06:55 by aziyani          ###   ########.fr       */
+/*   Updated: 2023/12/11 19:15:52 by aziyani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ Form::Form() : name("death"), gradeToSign(10), gradeToExecute(10)
 {
 }
 
-Form::Form(std::string name, bool signedStatus, int gradeToSign, int gradeToExecute) : name(name), signedStatus(signedStatus), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute)
+Form::Form(std::string name, int gradeToSign, int gradeToExecute) : name(name), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute)
 {
 	if (gradeToSign < 1 || gradeToExecute < 1)
 		throw GradeTooHighException();
 	else if (gradeToSign > 150 || gradeToExecute > 150)
-		throw GradeTooHighException();
+		throw GradeTooLowException();
 }
 
 Form::Form(Form const &obj) : name(obj.name), gradeToSign(obj.gradeToSign), gradeToExecute(obj.gradeToExecute)
@@ -55,22 +55,10 @@ int Form::getGradeToExecute() const
 
 void	Form::beSigned(const Bureaucrat bureaucrat)
 {
-	if (bureaucrat.getGrade() <= gradeToSign)
+	if (bureaucrat.getGrade() <= gradeToExecute)
 		signedStatus = true;
 	else
-		throw GradeTooHighException();
-}
-
-void	Form::signForm(const Bureaucrat bureaucrat)
-{
-	try
-	{
-		beSigned(bureaucrat);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+		throw GradeTooLowException();
 }
 
 Form &Form::operator=(const Form &obj)
@@ -78,6 +66,16 @@ Form &Form::operator=(const Form &obj)
 	if (this != &obj)
 		this->signedStatus = obj.signedStatus;
 	return (*this);
+}
+
+const char* Form::GradeTooHighException::what() const throw()
+{
+	return ("Grade is too high!");
+}
+
+const char* Form::GradeTooLowException::what() const throw()
+{
+	return ("Grade is too low!");
 }
 
 std::ostream &operator<<(std::ostream &output, Form const &obj)
