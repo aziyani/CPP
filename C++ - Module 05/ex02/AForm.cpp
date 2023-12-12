@@ -12,11 +12,11 @@
 
 # include "AForm.hpp"
 
-AForm::AForm() : name("death"), gradeToSign(10), gradeToExecute(10)
+AForm::AForm() : name("death"), signedStatus(false), gradeToSign(10), gradeToExecute(10)
 {
 }
 
-AForm::AForm(std::string name, int gradeToSign, int gradeToExecute) : name(name), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute)
+AForm::AForm(std::string name, int gradeToSign, int gradeToExecute) : name(name), signedStatus(false), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute)
 {
 	if (gradeToSign < 1 || gradeToExecute < 1)
 		throw GradeTooHighException();
@@ -24,7 +24,7 @@ AForm::AForm(std::string name, int gradeToSign, int gradeToExecute) : name(name)
 		throw GradeTooLowException();
 }
 
-AForm::AForm(AForm const &obj) : name(obj.name), gradeToSign(obj.gradeToSign), gradeToExecute(obj.gradeToExecute)
+AForm::AForm(AForm const &obj) : name(obj.name), signedStatus(false), gradeToSign(obj.gradeToSign), gradeToExecute(obj.gradeToExecute)
 {
 	*this = obj;
 }

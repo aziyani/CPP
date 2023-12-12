@@ -6,17 +6,17 @@
 /*   By: aziyani <aziyani@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 12:30:39 by aziyani           #+#    #+#             */
-/*   Updated: 2023/12/11 19:15:52 by aziyani          ###   ########.fr       */
+/*   Updated: 2023/12/12 20:57:05 by aziyani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Form.hpp"
 
-Form::Form() : name("death"), gradeToSign(10), gradeToExecute(10)
+Form::Form() : name("death"), signedStatus(false), gradeToSign(10), gradeToExecute(10)
 {
 }
 
-Form::Form(std::string name, int gradeToSign, int gradeToExecute) : name(name), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute)
+Form::Form(std::string name, int gradeToSign, int gradeToExecute) : name(name), signedStatus(false), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute)
 {
 	if (gradeToSign < 1 || gradeToExecute < 1)
 		throw GradeTooHighException();
@@ -24,7 +24,7 @@ Form::Form(std::string name, int gradeToSign, int gradeToExecute) : name(name), 
 		throw GradeTooLowException();
 }
 
-Form::Form(Form const &obj) : name(obj.name), gradeToSign(obj.gradeToSign), gradeToExecute(obj.gradeToExecute)
+Form::Form(Form const &obj) : name(obj.name), signedStatus(false), gradeToSign(obj.gradeToSign), gradeToExecute(obj.gradeToExecute)
 {
 	*this = obj;
 }
