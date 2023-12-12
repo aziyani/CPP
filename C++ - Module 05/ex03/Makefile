@@ -4,7 +4,8 @@ CC = C++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+SRC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
+HFILE = ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp Intern.hpp AForm.hpp Bureaucrat.hpp
 
 OBJ = $(SRC:%.cpp=%.o)
 
@@ -13,7 +14,7 @@ OBJ = $(SRC:%.cpp=%.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) $(HFILE)
 	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
 clean:

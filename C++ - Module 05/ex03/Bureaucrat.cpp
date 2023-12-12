@@ -6,7 +6,7 @@
 /*   By: aziyani <aziyani@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:29:41 by aziyani           #+#    #+#             */
-/*   Updated: 2023/12/04 14:38:38 by aziyani          ###   ########.fr       */
+/*   Updated: 2023/12/12 19:37:55 by aziyani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,36 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &obj)
     return (*this);
 }
 
+void	Bureaucrat::signForm(AForm &form)
+{
+	if (form.getSignedStatus() == true)
+    {
+        std::cout << name <<  " signed " << form.getName() << std::endl;
+    }
+    else
+    {
+        std::cout << name << " couldn't sign " << form.getName() << " because wsf" << std::endl;
+    }
+}
+
+void    Bureaucrat::executeForm(AForm const & form)
+{
+    if (grade <= form.getGradeToExecute())
+        std::cout << name << " executed " << form.getName() << std::endl;
+    else
+        std::cout << name << " don't executed " << form.getName() << std::endl;
+        
+}
+
+const char* Bureaucrat::GradeTooHighException::what() const throw()
+{
+    return ("Grade is too high!");
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw()
+{
+    return ("Grade is too low!");
+}
 
 std::ostream &operator<<(std::ostream &output, Bureaucrat const &obj)
 {

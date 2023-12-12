@@ -6,17 +6,22 @@
 /*   By: aziyani <aziyani@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:50:17 by aziyani           #+#    #+#             */
-/*   Updated: 2023/12/07 21:49:56 by aziyani          ###   ########.fr       */
+/*   Updated: 2023/12/11 22:42:13 by aziyani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", false, 72, 45), target("corombo")
+RobotomyRequestForm::RobotomyRequestForm() : AForm("Default", 72, 45), target("Default")
+{
+	
+}
+
+RobotomyRequestForm::RobotomyRequestForm(const std::string target) : AForm("RobotomyRequestForm", 72, 45), target(target)
 {
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string target) : AForm("RobotomyRequestForm", false, 72, 45), target(target)
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const& obj) : AForm(obj), target(obj.target)
 {
 }
 
@@ -38,8 +43,8 @@ void RobotomyRequestForm::execute(const Bureaucrat& executor) const
 	if (executor.getGrade() <= this->getGradeToExecute() && this->getSignedStatus() == true)
 	{
 		if(rand() % 2 == 0)
-			std::cout << this->target << "has been robotomized successfully" << std::endl;
+			std::cout << this->target << " has been robotomized successfully 50% of the time" << std::endl;
 		else
-			std::cout << "robotomy failed" << std::endl;
+			std::cout << "informs that the robotomy failed" << std::endl;
 	}
 }

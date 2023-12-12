@@ -6,7 +6,7 @@
 /*   By: aziyani <aziyani@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 19:24:08 by aziyani           #+#    #+#             */
-/*   Updated: 2023/12/11 22:50:25 by aziyani          ###   ########.fr       */
+/*   Updated: 2023/12/12 19:37:48 by aziyani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ public:
 	void    incrementGrade();
 	void    decrementGrade();
 
-	void	signForm(const AForm form);
+	void	signForm(AForm &form);
 	void	executeForm(AForm const & form);
 	class GradeTooHighException : public std::exception
 	{

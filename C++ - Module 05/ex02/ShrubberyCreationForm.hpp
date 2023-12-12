@@ -6,7 +6,7 @@
 /*   By: aziyani <aziyani@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:50:01 by aziyani           #+#    #+#             */
-/*   Updated: 2023/12/11 22:24:36 by aziyani          ###   ########.fr       */
+/*   Updated: 2023/12/12 19:27:04 by aziyani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "AForm.hpp"
 #include <fstream>
+#include "Bureaucrat.hpp"
 
 	class ShrubberyCreationForm : public AForm
 	{

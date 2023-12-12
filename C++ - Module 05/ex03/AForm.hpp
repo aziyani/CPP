@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AForm.hpp                                          :+:      :+:    :+:   */
+/*   AForm.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aziyani <aziyani@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 12:30:49 by aziyani           #+#    #+#             */
-/*   Updated: 2023/12/07 21:54:38 by aziyani          ###   ########.fr       */
+/*   Updated: 2023/12/11 22:14:14 by aziyani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <string>
 # include "Bureaucrat.hpp"
+
+class Bureaucrat; // class farword
 
 class AForm
 {
@@ -27,7 +29,7 @@ private:
 public:
 	AForm();
 	AForm(AForm const &obj);
-	AForm(std::string name, bool signedStatus, int gradeToSing, int gradeToExecute);
+	AForm(std::string name, int gradeToSing, int gradeToExecute);
 	~AForm();
 
 	AForm &operator=(const AForm &obj);
@@ -38,33 +40,17 @@ public:
 	int getGradeToExecute() const;
 
 	void beSigned(const Bureaucrat bureaucrat);
-	void signAForm(const Bureaucrat bureaucrat);
-	
-	class errFileException : public std::exception
-	{
-		public:
-			virtual const char *what() const throw()
-			{
-				return ("Unable to open file for shrubbery creation.");
-			}
-	};
+	virtual void execute(Bureaucrat const & executor) const = 0;
 	class GradeTooHighException : public std::exception
 	{
 		public:
-			virtual const char *what() const throw()
-			{
-				return ("Grade is too high!");
-			}
+			virtual const char *what() const throw();
 	};
 	class GradeTooLowException : public std::exception
 	{
 		public:
-			virtual const char *what() const throw()
-			{
-				return ("Grade is too low!");
-			}
+			virtual const char *what() const throw();
 	};
-	virtual void execute(const Bureaucrat& executor) const = 0;
 };
 
 std::ostream &operator<<(std::ostream &output, AForm const &obj);

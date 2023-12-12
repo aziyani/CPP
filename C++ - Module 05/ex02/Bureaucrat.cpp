@@ -6,7 +6,7 @@
 /*   By: aziyani <aziyani@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:29:41 by aziyani           #+#    #+#             */
-/*   Updated: 2023/12/11 22:56:22 by aziyani          ###   ########.fr       */
+/*   Updated: 2023/12/12 19:37:55 by aziyani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &obj)
     return (*this);
 }
 
-void	Bureaucrat::signForm(const AForm form)
+void	Bureaucrat::signForm(AForm &form)
 {
 	if (form.getSignedStatus() == true)
     {
