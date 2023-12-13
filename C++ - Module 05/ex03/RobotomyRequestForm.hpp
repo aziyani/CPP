@@ -6,7 +6,7 @@
 /*   By: aziyani <aziyani@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:50:01 by aziyani           #+#    #+#             */
-/*   Updated: 2023/12/12 19:27:51 by aziyani          ###   ########.fr       */
+/*   Updated: 2023/12/13 13:05:42 by aziyani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 	RobotomyRequestForm();
 	RobotomyRequestForm(const std::string target);
 	RobotomyRequestForm(RobotomyRequestForm const& obj);
-	virtual ~RobotomyRequestForm();
+	~RobotomyRequestForm();
 
 	RobotomyRequestForm &operator=(const RobotomyRequestForm& obj);
 

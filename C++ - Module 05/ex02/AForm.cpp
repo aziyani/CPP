@@ -18,6 +18,8 @@ AForm::AForm() : name("death"), signedStatus(false), gradeToSign(10), gradeToExe
 
 AForm::AForm(std::string name, int gradeToSign, int gradeToExecute) : name(name), signedStatus(false), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute)
 {
+	std::cout << "Aform param" << std::endl;
+
 	if (gradeToSign < 1 || gradeToExecute < 1)
 		throw GradeTooHighException();
 	else if (gradeToSign > 150 || gradeToExecute > 150)
@@ -26,7 +28,6 @@ AForm::AForm(std::string name, int gradeToSign, int gradeToExecute) : name(name)
 
 AForm::AForm(AForm const &obj) : name(obj.name), signedStatus(false), gradeToSign(obj.gradeToSign), gradeToExecute(obj.gradeToExecute)
 {
-	*this = obj;
 }
 
 AForm::~AForm()

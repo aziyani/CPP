@@ -6,7 +6,7 @@
 /*   By: aziyani <aziyani@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:50:17 by aziyani           #+#    #+#             */
-/*   Updated: 2023/12/12 19:30:21 by aziyani          ###   ########.fr       */
+/*   Updated: 2023/12/13 12:08:06 by aziyani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ PresidentialPardonForm::PresidentialPardonForm(const std::string target) : AForm
 	
 }
 
-PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const& obj)
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const& obj) : AForm(obj)
 {
 	*this = obj;
 }

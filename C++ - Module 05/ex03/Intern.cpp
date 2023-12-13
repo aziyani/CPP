@@ -6,7 +6,7 @@
 /*   By: aziyani <aziyani@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 13:11:53 by aziyani           #+#    #+#             */
-/*   Updated: 2023/12/12 20:01:50 by aziyani          ###   ########.fr       */
+/*   Updated: 2023/12/13 13:12:06 by aziyani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,6 @@ AForm* intern::makeForm(std::string name, std::string target)
 		}
 		i++;
 	}
-	throw errincaseException();
+	throw intern::errincaseException();
 	return(NULL);
 }

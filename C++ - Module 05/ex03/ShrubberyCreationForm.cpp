@@ -6,7 +6,7 @@
 /*   By: aziyani <aziyani@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:50:17 by aziyani           #+#    #+#             */
-/*   Updated: 2023/12/11 22:37:08 by aziyani          ###   ########.fr       */
+/*   Updated: 2023/12/13 13:16:55 by aziyani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,13 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string target) : AForm("
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const& obj) : AForm(obj)
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const& obj) : AForm(obj), target(obj.target)
 {
 }
 
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
-	
 }
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& obj)

@@ -6,7 +6,7 @@
 /*   By: aziyani <aziyani@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 12:30:39 by aziyani           #+#    #+#             */
-/*   Updated: 2023/12/12 20:57:05 by aziyani          ###   ########.fr       */
+/*   Updated: 2023/12/13 12:36:21 by aziyani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ Form::Form() : name("death"), signedStatus(false), gradeToSign(10), gradeToExecu
 Form::Form(std::string name, int gradeToSign, int gradeToExecute) : name(name), signedStatus(false), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute)
 {
 	if (gradeToSign < 1 || gradeToExecute < 1)
-		throw GradeTooHighException();
+		throw Form::GradeTooHighException();
 	else if (gradeToSign > 150 || gradeToExecute > 150)
-		throw GradeTooLowException();
+		throw Form::GradeTooLowException();
 }
 
 Form::Form(Form const &obj) : name(obj.name), signedStatus(false), gradeToSign(obj.gradeToSign), gradeToExecute(obj.gradeToExecute)
@@ -58,7 +58,7 @@ void	Form::beSigned(const Bureaucrat bureaucrat)
 	if (bureaucrat.getGrade() <= gradeToExecute)
 		signedStatus = true;
 	else
-		throw GradeTooLowException();
+		throw Form::GradeTooLowException();
 }
 
 Form &Form::operator=(const Form &obj)

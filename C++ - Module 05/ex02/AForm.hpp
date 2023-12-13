@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AFORM_H
-# define AFORM_H
+#ifndef AFORM_HPP
+# define AFORM_HPP
 
 # include <string>
 # include "Bureaucrat.hpp"
@@ -30,7 +30,7 @@ public:
 	AForm();
 	AForm(AForm const &obj);
 	AForm(std::string name, int gradeToSing, int gradeToExecute);
-	~AForm();
+	virtual ~AForm();
 
 	AForm &operator=(const AForm &obj);
 

@@ -6,7 +6,7 @@
 /*   By: aziyani <aziyani@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:50:01 by aziyani           #+#    #+#             */
-/*   Updated: 2023/12/11 20:12:31 by aziyani          ###   ########.fr       */
+/*   Updated: 2023/12/13 13:05:46 by aziyani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 	PresidentialPardonForm();
 	PresidentialPardonForm(const std::string target);
 	PresidentialPardonForm(PresidentialPardonForm const& obj);
-	virtual ~PresidentialPardonForm();
+	~PresidentialPardonForm();
 
 	PresidentialPardonForm &operator=(const PresidentialPardonForm& obj);
 
