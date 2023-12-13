@@ -6,7 +6,7 @@
 /*   By: aziyani <aziyani@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:29:21 by aziyani           #+#    #+#             */
-/*   Updated: 2023/12/12 19:36:17 by aziyani          ###   ########.fr       */
+/*   Updated: 2023/12/12 21:59:33 by aziyani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,22 +23,22 @@ int main()
 		Bureaucrat bureaucrat("adolf hitler", 6);
 		
 		ShrubberyCreationForm shrubberycreation("sadam");
-		// RobotomyRequestForm robotomyrequest("sadam");
-		// PresidentialPardonForm presedentialpardon("sadam");
+		RobotomyRequestForm robotomyrequest("sadam");
+		PresidentialPardonForm presedentialpardon("sadam");
 		
 		shrubberycreation.beSigned(bureaucrat);
-		// robotomyrequest.beSigned(bureaucrat);
-		// presedentialpardon.beSigned(bureaucrat);
+		robotomyrequest.beSigned(bureaucrat);
+		presedentialpardon.beSigned(bureaucrat);
 		
 		bureaucrat.signForm(shrubberycreation);
-		// bureaucrat.signForm(robotomyrequest);
-		// bureaucrat.signForm(presedentialpardon);
+		bureaucrat.signForm(robotomyrequest);
+		bureaucrat.signForm(presedentialpardon);
 
 		shrubberycreation.execute(bureaucrat);
-		// robotomyrequest.execute(bureaucrat);
-		// presedentialpardon.execute(bureaucrat);
+		robotomyrequest.execute(bureaucrat);
+		presedentialpardon.execute(bureaucrat);
 
-		// bureaucrat.executeForm(presedentialpardon);
+		bureaucrat.executeForm(presedentialpardon);
 	}
 	catch (const std::exception& e)
 	{

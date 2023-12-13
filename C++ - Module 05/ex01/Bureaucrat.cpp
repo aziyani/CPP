@@ -6,7 +6,7 @@
 /*   By: aziyani <aziyani@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:29:41 by aziyani           #+#    #+#             */
-/*   Updated: 2023/12/11 22:10:29 by aziyani          ###   ########.fr       */
+/*   Updated: 2023/12/13 11:05:59 by aziyani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade)
         throw GradeTooHighException();
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const &obj) : name(obj.name) // hit const maghatcopach flcopy assingment (list initializar)
+Bureaucrat::Bureaucrat(Bureaucrat const &obj) : name(obj.name)
 {
    *this = obj;
 }
@@ -64,6 +64,18 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &obj)
     if (this != &obj)
         this->grade = obj.grade;
     return (*this);
+}
+
+void	Bureaucrat::signForm(Form &form)
+{
+	if (form.getSignedStatus() == true)
+    {
+        std::cout << name <<  " signed " << form.getName() << std::endl;
+    }
+    else
+    {
+        std::cout << name << " couldn't sign " << form.getName() << " because wsf" << std::endl;
+    }
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()

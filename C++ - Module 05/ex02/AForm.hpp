@@ -16,7 +16,7 @@
 # include <string>
 # include "Bureaucrat.hpp"
 
-class Bureaucrat; // class farword
+class Bureaucrat;
 
 class AForm
 {

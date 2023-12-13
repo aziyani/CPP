@@ -6,7 +6,7 @@
 /*   By: aziyani <aziyani@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 12:30:49 by aziyani           #+#    #+#             */
-/*   Updated: 2023/12/11 22:14:14 by aziyani          ###   ########.fr       */
+/*   Updated: 2023/12/12 21:59:53 by aziyani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <string>
 # include "Bureaucrat.hpp"
 
-class Bureaucrat; // class farword
+class Bureaucrat;
 
 class Form
 {

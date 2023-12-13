@@ -6,7 +6,7 @@
 /*   By: aziyani <aziyani@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:29:41 by aziyani           #+#    #+#             */
-/*   Updated: 2023/12/12 19:37:55 by aziyani          ###   ########.fr       */
+/*   Updated: 2023/12/12 21:59:18 by aziyani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade)
         throw GradeTooHighException();
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const &obj) : name(obj.name) // hit const maghatcopach flcopy assingment (list initializar)
+Bureaucrat::Bureaucrat(Bureaucrat const &obj) : name(obj.name)
 {
    *this = obj;
 }

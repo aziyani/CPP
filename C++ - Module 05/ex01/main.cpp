@@ -6,7 +6,7 @@
 /*   By: aziyani <aziyani@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:29:21 by aziyani           #+#    #+#             */
-/*   Updated: 2023/12/11 19:12:09 by aziyani          ###   ########.fr       */
+/*   Updated: 2023/12/13 11:08:09 by aziyani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int main()
 {
 	try
 	{
-		Bureaucrat bureaucrat("adolf hitler", 10);
-		Form form("rouali", 52, 10);
+		Bureaucrat bureaucrat("adolf hitler", 53);
+		Form form("ziyani", 52, 10);
 		std::cout << bureaucrat << std::endl;
 		std::cout << form << std::endl;
 		bureaucrat.signForm(form);
